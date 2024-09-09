@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassifierApp", "ClassifierApp\ClassifierApp.csproj", "{A5B778E9-A84E-4604-AB80-9C46BBAE4ECA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{7BDDA579-530A-4322-8C2F-42B112FC5D5B}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5B778E9-A84E-4604-AB80-9C46BBAE4ECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5B778E9-A84E-4604-AB80-9C46BBAE4ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5B778E9-A84E-4604-AB80-9C46BBAE4ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5B778E9-A84E-4604-AB80-9C46BBAE4ECA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A891CAD1-3C57-47AB-9112-0A149D617D1D}
+	EndGlobalSection
+EndGlobal
