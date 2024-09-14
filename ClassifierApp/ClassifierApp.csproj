@@ -10,7 +10,7 @@
     <PackageReference Include="Microsoft.ML.FastTree" Version="3.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="Extrato-2024-08-classificado.tsv">
+    <None Update="dados-entrada-comclassificacao.tsv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

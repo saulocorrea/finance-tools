@@ -13,7 +13,7 @@ namespace ClassifierApp
 {
     public partial class ClassifierAppMLModel
     {
-        public const string RetrainFilePath =  @"C:\projects\finance-tools\ClassifierApp\Extrato-2024-08-classificado.tsv";
+        public const string RetrainFilePath =  @"C:\projects\finance-tools\ClassifierApp\dados-entrada-comclassificacao.tsv";
         public const char RetrainSeparatorChar = '	';
         public const bool RetrainHasHeader =  true;
         public const bool RetrainAllowQuoting =  false;
@@ -92,7 +92,7 @@ namespace ClassifierApp
             var pipeline = mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"Original",outputColumnName:@"Original")      
                                     .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"Original"}))      
                                     .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"Categoria",inputColumnName:@"Categoria",addKeyValueAnnotationsAsText:false))      
-                                    .Append(mlContext.MulticlassClassification.Trainers.SdcaMaximumEntropy(new SdcaMaximumEntropyMulticlassTrainer.Options(){L1Regularization=0.032798138F,L2Regularization=0.03125F,LabelColumnName=@"Categoria",FeatureColumnName=@"Features"}))      
+                                    .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy(new LbfgsMaximumEntropyMulticlassTrainer.Options(){L1Regularization=0.03125F,L2Regularization=0.19042388F,LabelColumnName=@"Categoria",FeatureColumnName=@"Features"}))      
                                     .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"PredictedLabel",inputColumnName:@"PredictedLabel"));
 
             return pipeline;

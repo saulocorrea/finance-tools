@@ -8,7 +8,7 @@
     "KeepPunctuations": false,
     "AllowQuoting": false,
     "Type": "TabularFile",
-    "FilePath": "C:\\projects\\finance-tools\\ClassifierApp\\Extrato-2024-08-classificado.tsv",
+    "FilePath": "C:\\projects\\finance-tools\\ClassifierApp\\dados-entrada-comclassificacao.tsv",
     "Delimiter": "\t",
     "DecimalMarker": ".",
     "HasHeader": true,
@@ -42,11 +42,11 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "SdcaMaximumEntropyMulti",
-        "Score": 0.738080808080808,
-        "RuntimeInSeconds": 0.198,
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.77443001443001447,
+        "RuntimeInSeconds": 0.365,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e8 * e10",
+          "_SCHEMA_": "e0 * e1 * e2 * e7 * e10",
           "e0": {
             "InputColumnName": "Original",
             "OutputColumnName": "Original"
@@ -66,44 +66,9 @@
             "InputColumnName": "Categoria",
             "AddKeyValueAnnotationsAsText": false
           },
-          "e8": {
-            "L1Regularization": 0.032798138,
-            "L2Regularization": 0.03125,
-            "LabelColumnName": "Categoria",
-            "FeatureColumnName": "Features"
-          }
-        }
-      },
-      {
-        "Version": 1,
-        "Type": "Trial",
-        "TrainerName": "SdcaMaximumEntropyMulti",
-        "Score": 0.72665223665223666,
-        "RuntimeInSeconds": 0.199,
-        "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e8 * e10",
-          "e0": {
-            "InputColumnName": "Original",
-            "OutputColumnName": "Original"
-          },
-          "e1": {
-            "InputColumnNames": [
-              "Original"
-            ],
-            "OutputColumnName": "Features"
-          },
-          "e10": {
-            "OutputColumnName": "PredictedLabel",
-            "InputColumnName": "PredictedLabel"
-          },
-          "e2": {
-            "OutputColumnName": "Categoria",
-            "InputColumnName": "Categoria",
-            "AddKeyValueAnnotationsAsText": false
-          },
-          "e8": {
+          "e7": {
             "L1Regularization": 0.03125,
-            "L2Regularization": 0.03125,
+            "L2Regularization": 0.19042388,
             "LabelColumnName": "Categoria",
             "FeatureColumnName": "Features"
           }
@@ -112,11 +77,11 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "SdcaMaximumEntropyMulti",
-        "Score": 0.72308080808080821,
-        "RuntimeInSeconds": 0.217,
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.77443001443001447,
+        "RuntimeInSeconds": 0.332,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e8 * e10",
+          "_SCHEMA_": "e0 * e1 * e2 * e7 * e10",
           "e0": {
             "InputColumnName": "Original",
             "OutputColumnName": "Original"
@@ -136,9 +101,9 @@
             "InputColumnName": "Categoria",
             "AddKeyValueAnnotationsAsText": false
           },
-          "e8": {
-            "L1Regularization": 0.031323407,
-            "L2Regularization": 0.03125,
+          "e7": {
+            "L1Regularization": 0.03125,
+            "L2Regularization": 0.40341747,
             "LabelColumnName": "Categoria",
             "FeatureColumnName": "Features"
           }
@@ -147,11 +112,11 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "SdcaMaximumEntropyMulti",
-        "Score": 0.7214141414141414,
-        "RuntimeInSeconds": 0.235,
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.77443001443001447,
+        "RuntimeInSeconds": 0.334,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e8 * e10",
+          "_SCHEMA_": "e0 * e1 * e2 * e7 * e10",
           "e0": {
             "InputColumnName": "Original",
             "OutputColumnName": "Original"
@@ -171,9 +136,9 @@
             "InputColumnName": "Categoria",
             "AddKeyValueAnnotationsAsText": false
           },
-          "e8": {
-            "L1Regularization": 0.033987887,
-            "L2Regularization": 0.03142364,
+          "e7": {
+            "L1Regularization": 0.03125,
+            "L2Regularization": 0.35022372,
             "LabelColumnName": "Categoria",
             "FeatureColumnName": "Features"
           }
@@ -182,11 +147,11 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "SdcaMaximumEntropyMulti",
-        "Score": 0.7214141414141414,
-        "RuntimeInSeconds": 0.187,
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.77443001443001447,
+        "RuntimeInSeconds": 0.322,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e8 * e10",
+          "_SCHEMA_": "e0 * e1 * e2 * e7 * e10",
           "e0": {
             "InputColumnName": "Original",
             "OutputColumnName": "Original"
@@ -206,9 +171,44 @@
             "InputColumnName": "Categoria",
             "AddKeyValueAnnotationsAsText": false
           },
-          "e8": {
-            "L1Regularization": 0.031316657,
-            "L2Regularization": 0.03125,
+          "e7": {
+            "L1Regularization": 0.03326027,
+            "L2Regularization": 0.28578722,
+            "LabelColumnName": "Categoria",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.77443001443001447,
+        "RuntimeInSeconds": 0.487,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e7 * e10",
+          "e0": {
+            "InputColumnName": "Original",
+            "OutputColumnName": "Original"
+          },
+          "e1": {
+            "InputColumnNames": [
+              "Original"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "OutputColumnName": "Categoria",
+            "InputColumnName": "Categoria",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e7": {
+            "L1Regularization": 0.03125,
+            "L2Regularization": 0.126882,
             "LabelColumnName": "Categoria",
             "FeatureColumnName": "Features"
           }
@@ -238,7 +238,7 @@
     "Version": 2,
     "Subsampling": false,
     "Type": "ClassificationTrainingOption",
-    "TrainingTime": 300,
+    "TrainingTime": 900,
     "LabelColumn": "Categoria",
     "ValidationOption": {
       "Version": 0,
