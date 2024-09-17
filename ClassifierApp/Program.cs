@@ -9,11 +9,13 @@ if (args.Length == 0)
 
 //FileBaseHelper.ClearFileDescriptions();
 
-foreach (var arg in args)
+var lines = FileBaseHelper.ParseTextToTabularData(args);
+
+foreach (var arg in lines)
 {
     var fileRow = new InputFileRow
     {
-        Original = arg
+        Original = arg.Split('\t')[1],
     };
     
     ClassifierAppMLModel.ModelInput dataToPredict = new()
@@ -22,6 +24,8 @@ foreach (var arg in args)
     };
 
     var predicted = ClassifierAppMLModel.Predict(dataToPredict);
-    
-    Console.WriteLine($"{arg}={predicted.PredictedLabel} [{predicted.Score.First()}]");
+
+    var contentLine = $"{arg}\t{predicted.PredictedLabel}\tcheck [{Math.Round((decimal)(predicted.Score.First() * 100))}]";
+
+    Console.WriteLine(contentLine);
 }
