@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "ClassifierApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:53411;http://localhost:53412",
+      "launchUrl": "https://localhost:53411/swagger"
+    }
+  }
+}
