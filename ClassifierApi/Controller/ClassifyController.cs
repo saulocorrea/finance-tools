@@ -1,4 +1,5 @@
-﻿using ClassifierCore;
+﻿using ClassifierApi;
+using ClassifierCore;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
@@ -8,6 +9,7 @@ public class ClassifyController(ILogger<ClassifyController> logger) : Controller
     private readonly ILogger<ClassifyController> _logger = logger;
 
     [HttpPost]
+    [Route("run-prediction")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -15,14 +17,14 @@ public class ClassifyController(ILogger<ClassifyController> logger) : Controller
     {
         try
         {
-            var lines = FileBaseHelper.ParseTextToTabularData(values);
+            //var lines = FileBaseHelper.ParseTextToTabularData(values);
             var returnLines = new List<string>();
 
-            foreach (var arg in lines)
+            foreach (var arg in values)
             {
                 var fileRow = new InputFileRow
                 {
-                    Original = arg.Split('\t')[1],
+                    Original = arg,
                 };
 
                 ClassifierAppMLModel.ModelInput dataToPredict = new()

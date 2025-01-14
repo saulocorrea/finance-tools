@@ -13,7 +13,7 @@
                 _original = value;
                 _cleanned = value
                     .Replace("COMPRAS NACIONAIS ", "")
-                    .Replace("PAGAMENTO PIX ", "")
+                    //.Replace("PAGAMENTO PIX ", "")
                     .Replace("LIQUIDACAO BOLETO SICREDI ", "")
                     .Replace("LIQUIDACAO BOLETO ", "")
                     .Trim();

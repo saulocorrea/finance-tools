@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 using Microsoft.ML;
 using Microsoft.ML.Data;
 using Microsoft.ML.Trainers;
+using Microsoft.ML.Trainers.FastTree;
+
+namespace ClassifierApi
+{
     public partial class ClassifierAppMLModel
     {
         public const string RetrainFilePath =  @"C:\projects\finance-tools\ClassifierApp\dados-entrada-comclassificacao.tsv";
@@ -89,10 +93,10 @@ using Microsoft.ML.Trainers;
             var pipeline = mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"Original",outputColumnName:@"Original")      
                                     .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"Original"}))      
                                     .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"Categoria",inputColumnName:@"Categoria",addKeyValueAnnotationsAsText:false))      
-                                    .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy(new LbfgsMaximumEntropyMulticlassTrainer.Options(){L1Regularization=0.03125F,L2Regularization=0.19042388F,LabelColumnName=@"Categoria",FeatureColumnName=@"Features"}))      
+                                    .Append(mlContext.MulticlassClassification.Trainers.OneVersusAll(binaryEstimator:mlContext.BinaryClassification.Trainers.FastTree(new FastTreeBinaryTrainer.Options(){NumberOfLeaves=6,MinimumExampleCountPerLeaf=2,NumberOfTrees=14,MaximumBinCountPerFeature=87,FeatureFraction=0.5641656525092361,LearningRate=0.29572782639262,LabelColumnName=@"Categoria",FeatureColumnName=@"Features",DiskTranspose=false}),labelColumnName: @"Categoria"))      
                                     .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"PredictedLabel",inputColumnName:@"PredictedLabel"));
 
             return pipeline;
         }
     }
- 
+ }
